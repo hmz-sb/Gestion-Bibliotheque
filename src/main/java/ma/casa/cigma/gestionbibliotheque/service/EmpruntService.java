@@ -1,23 +1,24 @@
 package ma.casa.cigma.gestionbibliotheque.service;
 
-import ma.casa.cigma.gestionbibliotheque.entities.Emprunt;
+import ma.casa.cigma.gestionbibliotheque.dto.EmpruntDto;
 import ma.casa.cigma.gestionbibliotheque.entities.EtatDuDocument;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public interface EmpruntService {
 
-    Emprunt renouvelLePret (Date date);
+    LocalDateTime renouvelLePret (LocalDateTime date);
 
-    Emprunt verifierDATErETOUR (Date date);
+    EmpruntDto verifierDATErETOUR (Date date);
 
-    Emprunt enCours (Date date);
+    EmpruntDto enCours (Date date);
 
-    Emprunt faireEmprunt (Date date);
+    EmpruntDto faireEmprunt (Date date);
 
-    Emprunt finaliserEmprunt (Date date);
+    EmpruntDto finaliserEmprunt (Date date);
 
-    Emprunt siDocumentEmpruntable (EtatDuDocument etatDuDocument);
+    EmpruntDto siDocumentEmpruntable (EtatDuDocument etatDuDocument);
 
-    Emprunt numDeRappel ();
+    EmpruntDto numDeRappel ();
 }

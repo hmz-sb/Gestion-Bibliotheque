@@ -13,6 +13,7 @@ import java.util.Objects;
 @Table
 @AllArgsConstructor
 @ToString
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Document {
     @Id
     @Column(name = "id_Document")

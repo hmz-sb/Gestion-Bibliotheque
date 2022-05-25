@@ -50,7 +50,8 @@ public class AuthenticationController {
             throw new BusinessException("Login ou mot de passe incorrect");
         }
     }
-    @PostMapping("/signup") public ResponseEntity<?> registerUser(@Valid @RequestBody UserVo userVo) {
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser(@Valid @RequestBody UserVo userVo) {
         if (userService.existsByUsername(userVo.getUsername())) { return ResponseEntity.badRequest().body("Error: Username is already taken!");
         }
 // par défaut, le client a le rôle CLIENT

@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Adhernet {
     @Id
     @Column(name = "id_Adhernet", nullable = false)
@@ -30,5 +31,8 @@ public class Adhernet {
     @JoinColumn
     private  StatutDuMembre statutDuMembre;
 
+    public String getNom() {
+        return nom;
+    }
 
 }

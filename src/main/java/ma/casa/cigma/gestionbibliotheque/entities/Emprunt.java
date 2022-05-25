@@ -7,6 +7,7 @@ import lombok.ToString;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 @Entity
 @Data
@@ -21,8 +22,8 @@ public class Emprunt {
     @GeneratedValue
     private Long id;
 
-    private Date dateRetourTheorique;
-    private Date dateRetourEffective;
+    private LocalDateTime dateRetourTheorique;
+    private LocalDateTime dateRetourEffective;
     private int numDeRappel;
 
 

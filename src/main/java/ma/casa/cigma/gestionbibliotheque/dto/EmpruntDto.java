@@ -6,6 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -13,7 +15,8 @@ import java.util.Date;
 @ToString
 public class EmpruntDto implements Serializable {
     private Long id;
-    private Date dateRetourTheorique;
-    private  Date dateRetourEffective;
+    private LocalDateTime dateRetourTheorique;
+    private  LocalDateTime dateRetourEffective;
     private int numDeRappel;
+
 }

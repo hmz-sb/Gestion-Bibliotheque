@@ -16,7 +16,7 @@ public class AdhernetMapping {
     }
 
 
-    public Adhernet adhernetBoToDto(AdhernetDto adhernetDto) {
+    public Adhernet adhernetBoToDto(Adhernet adhernetDto) {
         Adhernet adhernet=modelMapper.map(adhernetDto,Adhernet.class);
         return adhernet;
 

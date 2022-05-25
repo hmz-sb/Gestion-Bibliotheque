@@ -1,46 +1,62 @@
 package ma.casa.cigma.gestionbibliotheque.service.impl;
 
-import ma.casa.cigma.gestionbibliotheque.entities.Emprunt;
+import ma.casa.cigma.gestionbibliotheque.dto.EmpruntDto;
 import ma.casa.cigma.gestionbibliotheque.entities.EtatDuDocument;
+import ma.casa.cigma.gestionbibliotheque.mapping.EmpruntMapping;
+import ma.casa.cigma.gestionbibliotheque.repository.EmpruntRepository;
 import ma.casa.cigma.gestionbibliotheque.service.EmpruntService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Service
+@Transactional
 public class EmpruntServiceImpl implements EmpruntService {
+
+    @Autowired
+    EmpruntRepository empruntRepository;
+
+    @Autowired
+    EmpruntMapping empruntMapping;
+    @Autowired
+    MessageSource messageSource;
+
+    public LocalDateTime renouvelLePret(LocalDateTime date) {
+
+        return LocalDateTime.now();
+    }
+
     @Override
-    public Emprunt renouvelLePret(Date date) {
+    public EmpruntDto verifierDATErETOUR(Date date) {
         return null;
     }
 
     @Override
-    public Emprunt verifierDATErETOUR(Date date) {
+    public EmpruntDto enCours(Date date) {
         return null;
     }
 
     @Override
-    public Emprunt enCours(Date date) {
+    public EmpruntDto faireEmprunt(Date date) {
         return null;
     }
 
     @Override
-    public Emprunt faireEmprunt(Date date) {
+    public EmpruntDto finaliserEmprunt(Date date) {
         return null;
     }
 
     @Override
-    public Emprunt finaliserEmprunt(Date date) {
+    public EmpruntDto siDocumentEmpruntable(EtatDuDocument etatDuDocument) {
         return null;
     }
 
     @Override
-    public Emprunt siDocumentEmpruntable(EtatDuDocument etatDuDocument) {
-        return null;
-    }
-
-    @Override
-    public Emprunt numDeRappel() {
+    public EmpruntDto numDeRappel() {
         return null;
     }
 }
